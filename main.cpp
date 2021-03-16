@@ -53,7 +53,8 @@ int main(int, char *[])
 	screen(screenWidth, screenHeight, 0, "Raycaster");
 
 	while (!done())
-	{
+	{	
+		clearSrf();
 		for (int x = 0; x < w; x++)
 		{
 			double cameraX = 2 * x / (double) (w) - 1;
@@ -128,7 +129,7 @@ int main(int, char *[])
 
 			if (side == 1) {color = color / 2;}
 
-			verLine(x, drawStart, drawEnd, color);
+			verLine(x, drawEnd, drawStart, color);
 		}
 
 		//timing for input and FPS counter
@@ -137,6 +138,7 @@ int main(int, char *[])
 		double frameTime = (time - oldTime) / 1000.0; //frameTime is the time this frame has taken, in seconds
 		print(1.0 / frameTime); //FPS counter
 		redraw();
+
 
 		double moveSpeed = frameTime * 5.0; //the constant value is in squares/second
 		double rotSpeed = frameTime * 3.0; //the constant value is in radians/second

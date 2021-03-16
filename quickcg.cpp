@@ -206,6 +206,11 @@ namespace QuickCG
     SDL_RenderPresent(render);
   }
 
+  void clearSrf(const ColorRGBA& color) 
+  {
+    SDL_FillRect(srf, NULL, SDL_MapRGBA(srf->format, color.r, color.g, color.b, color.a));
+  }
+
   //Puts an RGBA color pixel at position x,y
   void pset(int x, int y, const ColorRGBA& color)
   {

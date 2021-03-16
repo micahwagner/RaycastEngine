@@ -202,6 +202,7 @@ void lock();
 void unlock();
 void redraw();
 void cls(const ColorRGBA& color = RGB_Black);
+void clearSrf(const ColorRGBA& color = RGB_Black);
 void pset(int x, int y, const ColorRGBA& color);
 ColorRGBA pget(int x, int y);
 void drawBuffer(Uint32* buffer);
