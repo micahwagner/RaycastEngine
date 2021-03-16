@@ -9,8 +9,8 @@ using namespace std;
 
 #define mapWidth 24
 #define mapHeight 24
-#define screenWidth 2000
-#define screenHeight 1600
+#define screenWidth 1200
+#define screenHeight 800
 
 int worldMap[mapWidth][mapHeight] =
 {
@@ -78,17 +78,17 @@ int main(int, char *[])
 
 			if (rayDirX < 0) {
 				stepX = -1;
-				sideDistX = (mapX - posX) * deltaDistX;
+				sideDistX = (posX - mapX) * deltaDistX;
 			} else {
 				stepX = 1;
-				sideDistX = (1 - (mapX - posX)) * deltaDistX;
+				sideDistX = (mapX + 1 - posX) * deltaDistX;
 			}
 			if (rayDirY < 0) {
 				stepY = -1;
-				sideDistY = (mapY - posY) * deltaDistY;
+				sideDistY = (posY - mapY) * deltaDistY;
 			} else {
 				stepY = 1;
-				sideDistY = (1 - (mapY - posY)) * deltaDistY;
+				sideDistY = (mapY + 1 - posY) * deltaDistY;
 			}
 
 			while (hit == 0) {
