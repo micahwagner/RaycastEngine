@@ -162,8 +162,9 @@ int main(int, char *[])
       		  int texY = (int)texPos & (texHeight - 1);
       		  texPos += step;
       		  Uint32 color = texture[texNum][texHeight * texX + texY];
+      		  color = (color << 8) | 255;
       		  //make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
-      		  if(side == 1) color = (color >> 1) & 8355711;
+      		  if(side == 1) color = ((color >> 1) & 2139062143) | 255;
       		  buffer[y][x] = color;
       		}      		
 		}
@@ -179,7 +180,7 @@ int main(int, char *[])
 		redraw();
 
 
-		double moveSpeed = frameTime * 6.0; //the constant value is in squares/second
+		double moveSpeed = frameTime * 5.0; //the constant value is in squares/second
 		double rotSpeed = frameTime * 3.0; //the constant value is in radians/second
 
 
