@@ -134,7 +134,8 @@ namespace QuickCG
       SDL_Quit();
       std::exit(1);
     }
-    SDL_SetWindowFullscreen(scr, SDL_WINDOW_FULLSCREEN_DESKTOP);
+    //SDL_SetWindowFullscreen(scr, SDL_WINDOW_FULLSCREEN_DESKTOP);
+    SDL_SetWindowSize(scr, 1200, 900);
     render = SDL_CreateRenderer(scr, -1, 0);
     if (render == NULL)
     {

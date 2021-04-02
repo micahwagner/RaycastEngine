@@ -67,32 +67,32 @@ using namespace std;
 //   {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7}
 // };
 
-int worldMap[mapWidth][mapHeight]=
+int worldMap[mapWidth][mapHeight] =
 {
-  {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7},
-  {4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,7},
-  {4,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-  {4,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-  {4,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,7},
-  {4,0,4,0,0,0,0,5,5,5,5,5,5,5,5,5,7,7,0,7,7,7,7,7},
-  {4,0,5,0,0,0,0,5,0,5,0,5,0,5,0,5,7,0,0,0,7,7,7,1},
-  {4,0,6,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,0,0,0,8},
-  {4,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,1},
-  {4,0,8,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,0,0,0,8},
-  {4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,7,7,7,1},
-  {4,0,0,0,0,0,0,5,5,5,5,0,5,5,5,5,7,7,7,7,7,7,7,1},
-  {6,6,6,6,6,6,6,6,6,6,6,0,6,6,6,6,6,6,6,6,6,6,6,6},
-  {8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
-  {6,6,6,6,6,6,0,6,6,6,6,0,6,6,6,6,6,6,6,6,6,6,6,6},
-  {4,4,4,4,4,4,0,4,4,4,6,0,6,2,2,2,2,2,2,2,3,3,3,3},
-  {4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
-  {4,0,0,0,0,0,0,0,0,0,0,0,6,2,0,0,5,0,0,2,0,0,0,2},
-  {4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
-  {4,0,6,0,6,0,0,0,0,4,6,0,0,0,0,0,5,0,0,0,0,0,0,2},
-  {4,0,0,5,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
-  {4,0,6,0,6,0,0,0,0,4,6,0,6,2,0,0,5,0,0,2,0,0,0,2},
-  {4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
-  {4,4,4,4,4,4,4,4,4,4,1,1,1,2,2,2,2,2,2,3,3,3,3,3}
+	{4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 7, 7, 7, 7, 7, 7, 7},
+	{4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7},
+	{4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7},
+	{4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7},
+	{4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7},
+	{4, 0, 4, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 0, 7, 7, 7, 7, 7},
+	{4, 0, 5, 0, 0, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 7, 0, 0, 0, 7, 7, 7, 1},
+	{4, 0, 6, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 5, 7, 0, 0, 0, 0, 0, 0, 8},
+	{4, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 1},
+	{4, 0, 8, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 5, 7, 0, 0, 0, 0, 0, 0, 8},
+	{4, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 5, 7, 0, 0, 0, 7, 7, 7, 1},
+	{4, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 0, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 1},
+	{6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6},
+	{8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4},
+	{6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6},
+	{4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 6, 0, 6, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3},
+	{4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 6, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2},
+	{4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2, 0, 0, 5, 0, 0, 2, 0, 0, 0, 2},
+	{4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 6, 2, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2},
+	{4, 0, 6, 0, 6, 0, 0, 0, 0, 4, 6, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 2},
+	{4, 0, 0, 5, 0, 0, 0, 0, 0, 4, 6, 0, 6, 2, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2},
+	{4, 0, 6, 0, 6, 0, 0, 0, 0, 4, 6, 0, 6, 2, 0, 0, 5, 0, 0, 2, 0, 0, 0, 2},
+	{4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0, 6, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2},
+	{4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}
 };
 
 int main(int, char *[])
@@ -106,30 +106,88 @@ int main(int, char *[])
 	double frameTime = 0;
 
 	Uint32 buffer[screenHeight][screenWidth]; // y-coordinate first because it works per scanline
-  	std::vector<Uint32> texture[8];
-  	for(int i = 0; i < 8; i++) texture[i].resize(texWidth * texHeight);
+	std::vector<Uint32> texture[8];
+	for (int i = 0; i < 8; i++) texture[i].resize(texWidth * texHeight);
 
-  	unsigned long tw, th;
-  	loadImage(texture[0], tw, th, "pics/eagle.png");
-  	loadImage(texture[1], tw, th, "pics/redbrick.png");
-  	loadImage(texture[2], tw, th, "pics/purplestone.png");
-  	loadImage(texture[3], tw, th, "pics/greystone.png");
-  	loadImage(texture[4], tw, th, "pics/bluestone.png");
-  	loadImage(texture[5], tw, th, "pics/mossy.png");
-  	loadImage(texture[6], tw, th, "pics/wood.png");
-  	loadImage(texture[7], tw, th, "pics/colorstone.png");
+	unsigned long tw, th;
+	loadImage(texture[0], tw, th, "pics/eagle.png");
+	loadImage(texture[1], tw, th, "pics/redbrick.png");
+	loadImage(texture[2], tw, th, "pics/purplestone.png");
+	loadImage(texture[3], tw, th, "pics/greystone.png");
+	loadImage(texture[4], tw, th, "pics/bluestone.png");
+	loadImage(texture[5], tw, th, "pics/mossy.png");
+	loadImage(texture[6], tw, th, "pics/wood.png");
+	loadImage(texture[7], tw, th, "pics/colorstone.png");
 
-  	 for(size_t i = 0; i < 8; i++)
-  		for(size_t x = 0; x < texWidth; x++)
-  			for(size_t y = 0; y < x; y++)
-  				std::swap(texture[i][texWidth * y + x], texture[i][texHeight * x + y]);
+	for (size_t i = 0; i < 8; i++)
+		for (size_t x = 0; x < texWidth; x++)
+			for (size_t y = 0; y < x; y++)
+				std::swap(texture[i][texWidth * y + x], texture[i][texHeight * x + y]);
 
 
 	screen(screenWidth, screenHeight, 0, "Raycaster");
 	int currentRay = 0;
 
 	while (!done())
-	{	
+	{
+
+		//FLOOR CASTING
+		for (int y = 0; y < h; y++) {
+			// rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
+			float rayDirX0 = dirX - planeX;
+			float rayDirY0 = dirY - planeY;
+			float rayDirX1 = dirX + planeX;
+			float rayDirY1 = dirY + planeY;
+
+			// Current y position compared to the center of the screen (the horizon)
+			int p = y - screenHeight / 2;
+
+			// Vertical position of the camera.
+			float posZ = 0.5 * screenHeight;
+
+			// Horizontal distance from the camera to the floor for the current row.
+			// 0.5 is the z position exactly in the middle between floor and ceiling.
+			float rowDistance = posZ / p;
+
+			// calculate the real world step vector we have to add for each x (parallel to camera plane)
+			// adding step by step avoids multiplications with a weight in the inner loop
+			float floorStepX = rowDistance * (rayDirX1 - rayDirX0) / screenWidth;
+			float floorStepY = rowDistance * (rayDirY1 - rayDirY0) / screenWidth;
+
+			// real world coordinates of the leftmost column. This will be updated as we step to the right.
+			float floorX = posX + rowDistance * rayDirX0;
+			float floorY = posY + rowDistance * rayDirY0;
+
+			for (int x = 0; x < screenWidth; ++x) {
+				// the cell coord is simply got from the integer parts of floorX and floorY
+				int cellX = (int)(floorX);
+				int cellY = (int)(floorY);
+
+				// get the texture coordinate from the fractional part
+				int tx = (int)(texWidth * (floorX - cellX)) & (texWidth - 1);
+				int ty = (int)(texHeight * (floorY - cellY)) & (texHeight - 1);
+
+				floorX += floorStepX;
+				floorY += floorStepY;
+
+				// choose texture and draw the pixel
+				int floorTexture = 3;
+				int ceilingTexture = 6;
+				Uint32 color;
+
+				// floor
+				color = texture[floorTexture][texWidth * ty + tx];
+				color = (color << 8) | 255;
+				color = (color >> 1 & 2139062143) | 255; // make a bit darker
+				buffer[y][x] = color;
+
+				//ceiling (symmetrical, at screenHeight - y - 1 instead of y)
+				color = texture[ceilingTexture][texWidth * ty + tx];
+				color = (color << 8) | 255;
+				color = (color >> 1 & 2139062143) | 255; // make a bit darker
+				buffer[screenHeight - y - 1][x] = color;
+			}
+		}
 		for (int x = 0; x < w; x++)
 		{
 			//currentRay = x;
@@ -194,38 +252,38 @@ int main(int, char *[])
 
 
 			//texturing calculations
-      		int texNum = worldMap[mapX][mapY] - 1; //1 subtracted from it so that texture 0 can be used!
+			int texNum = worldMap[mapX][mapY] - 1; //1 subtracted from it so that texture 0 can be used!
 
-      		//calculate value of wallX
-      		double wallX; //where exactly the wall was hit
-      		if (side == 0) wallX = posY + perpWallDist * rayDirY;
-      		else           wallX = posX + perpWallDist * rayDirX;
-      		wallX -= floor((wallX));
+			//calculate value of wallX
+			double wallX; //where exactly the wall was hit
+			if (side == 0) wallX = posY + perpWallDist * rayDirY;
+			else           wallX = posX + perpWallDist * rayDirX;
+			wallX -= floor((wallX));
 
-      		//x coordinate on the texture
-      		int texX = int(wallX * double(texWidth));
-      		if(side == 0 && rayDirX > 0) texX = texWidth - texX - 1;
-      		if(side == 1 && rayDirY < 0) texX = texWidth - texX - 1;
+			//x coordinate on the texture
+			int texX = int(wallX * double(texWidth));
+			if (side == 0 && rayDirX > 0) texX = texWidth - texX - 1;
+			if (side == 1 && rayDirY < 0) texX = texWidth - texX - 1;
 
 			// How much to increase the texture coordinate per screen pixel
-      		double step = 1.0 * texHeight / lineHeight;
-      		// Starting texture coordinate
-      		double texPos = (drawStart - h / 2 + lineHeight / 2) * step;
-      		for(int y = drawStart; y<drawEnd; y++)
-      		{
-      		  // Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
-      		  int texY = (int)texPos & (texHeight - 1);
-      		  texPos += step;
-      		  Uint32 color = texture[texNum][texHeight * texX + texY];
-      		  color = (color << 8) | 255;
-      		  //make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
-      		  if(side == 1) color = ((color >> 1) & 2139062143) | 255;
-      		  buffer[y][x] = color;
-      		}      		
+			double step = 1.0 * texHeight / lineHeight;
+			// Starting texture coordinate
+			double texPos = (drawStart - h / 2 + lineHeight / 2) * step;
+			for (int y = drawStart; y < drawEnd; y++)
+			{
+				// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
+				int texY = (int)texPos & (texHeight - 1);
+				texPos += step;
+				Uint32 color = texture[texNum][texHeight * texX + texY];
+				color = (color << 8) | 255;
+				//make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
+				if (side == 1) color = ((color >> 1) & 2139062143) | 255;
+				buffer[y][x] = color;
+			}
 		}
 
 		drawBuffer(buffer[0]);
-    	for(int y = 0; y < h; y++) for(int x = 0; x < w; x++) buffer[y][x] = 0;
+		for (int y = 0; y < h; y++) for (int x = 0; x < w; x++) buffer[y][x] = 0;
 
 		//timing for input and FPS counter
 		oldTime = time;
