@@ -147,7 +147,7 @@ int main(int, char *[])
 
 			// Horizontal distance from the camera to the floor for the current row.
 			// 0.5 is the z position exactly in the middle between floor and ceiling.
-			float rowDistance = posZ / p;
+			float rowDistance = abs(posZ / p);
 
 			// calculate the real world step vector we have to add for each x (parallel to camera plane)
 			// adding step by step avoids multiplications with a weight in the inner loop
@@ -176,17 +176,20 @@ int main(int, char *[])
 				Uint32 color;
 
 				// floor
-				color = texture[floorTexture][texWidth * ty + tx];
-				color = (color << 8) | 255;
-				color = (color >> 1 & 2139062143) | 255; // make a bit darker
-				buffer[y][x] = color;
-
-				//ceiling (symmetrical, at screenHeight - y - 1 instead of y)
-				color = texture[ceilingTexture][texWidth * ty + tx];
-				color = (color << 8) | 255;
-				color = (color >> 1 & 2139062143) | 255; // make a bit darker
-				buffer[screenHeight - y - 1][x] = color;
+				if (y > h / 2)
+				{
+					color = texture[floorTexture][texWidth * ty + tx];
+					color = (color << 8) | 255;
+					color = (color >> 1 & 2139062143) | 255; // make a bit darker
+					buffer[y][x] = color;
+				} else {
+					color = texture[ceilingTexture][texWidth * ty + tx];
+					color = (color << 8) | 255;
+					color = (color >> 1 & 2139062143) | 255; // make a bit darker
+					buffer[y][x] = color;
+				}
 			}
+				
 		}
 		for (int x = 0; x < w; x++)
 		{
